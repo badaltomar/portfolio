@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Badal Tomar | Software Engineer</title>
+<meta name="description" content="Badal Tomar is a software engineer (React, Next.js, Node.js, TypeScript, MongoDB, PostgreSQL) and AI evaluation engineer from Gurugram, India. Open to remote, onsite and relocation.">
+<meta name="theme-color" content="#14100b">
+<meta name="author" content="Badal Tomar">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Badal Tomar | Software Engineer">
+<meta property="og:description" content="I build software the way I shoot: calm, precise, on target. Open to work.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Badal Tomar","jobTitle":"Software Engineer","address":{"@type":"PostalAddress","addressLocality":"Gurugram","addressCountry":"IN"},"email":"mailto:tomarbadal9@gmail.com","image":"assets/img/badal.webp","sameAs":["https://github.com/badaltomar","https://www.linkedin.com/in/badaltomar"],"alumniOf":"Uttaranchal University","knowsAbout":["React","Next.js","Node.js","TypeScript","MongoDB","PostgreSQL","GraphQL","AWS","AI evaluation"]}
+</script>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- BOOT -->
+<div id="boot" aria-hidden="true">
+  <div class="boot-box">
+    <p class="bl">&gt; BADAL.OS v1.0 booting</p>
+    <p class="bl">&gt; loading sights ............ <b>OK</b></p>
+    <p class="bl">&gt; calibrating breath ....... <b>OK</b></p>
+    <p class="bl">&gt; range 10 m &middot; wind 0.0 .... <b>OK</b></p>
+    <p class="bl ready">&gt; READY<span class="blink">_</span></p>
+  </div>
+</div>
+
+<!-- HUD -->
+<header class="hud" data-theme="light">
+  <a class="logo glass" href="#top" aria-label="Badal Tomar, back to top">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="2.5" fill="#ff6a2b"/></svg>
+    <span>Badal Tomar</span>
+  </a>
+  <nav class="nav glass" id="nav" aria-label="Primary">
+    <span class="nav-pill" id="navPill" aria-hidden="true"></span>
+    <a href="#stance">Stance</a>
+    <a href="#shots">Shots</a>
+    <a href="#line">The Line</a>
+    <a href="#scorecard">Scorecard</a>
+    <a href="#method">Method</a>
+    <button class="snd-m" id="sndM" type="button" aria-pressed="false">Sound <b>OFF</b></button>
+  </nav>
+  <div class="hud-right">
+    <button class="snd glass" id="snd" type="button" aria-pressed="false" title="Toggle shot sound">SND <b>OFF</b></button>
+    <a class="btn btn-amber btn-sm" href="#contact">Hire me</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+
+<aside class="rail" aria-label="Chapters"></aside>
+<div class="scoreboard glass" id="scoreboard" aria-live="off">SHOTS <b id="shotN">0</b> &middot; AVG <b id="shotAvg">0.0</b></div>
+<div id="holes" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status"></div>
+
+<main>
+
+<!-- hero -->
+<section id="top" class="hero" data-theme="light" data-title="Start">
+  <div class="stick">
+    <div class="paper-grid" aria-hidden="true"></div>
+    <div class="corner tl" aria-hidden="true">git: main</div>
+    <div class="corner tr" aria-hidden="true"><i class="ok"></i>build passing</div>
+    <div class="corner bl" aria-hidden="true">v1.0.0 · 2026</div>
+
+    <svg class="target-svg" id="targetSvg" viewBox="-120 -20 440 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g class="breathe" id="breathe">
+        <g fill="none" stroke="#14100b" stroke-width=".7">
+          <circle cx="100" cy="100" r="96"/>
+          <circle cx="100" cy="100" r="86"/>
+          <circle cx="100" cy="100" r="76"/>
+          <circle cx="100" cy="100" r="66"/>
+          <circle cx="100" cy="100" r="56"/>
+          <circle cx="100" cy="100" r="46"/>
+        </g>
+        <circle cx="100" cy="100" r="36" fill="#14100b"/>
+        <g fill="none" stroke="#f1e6cf" stroke-width=".6">
+          <circle cx="100" cy="100" r="28"/>
+          <circle cx="100" cy="100" r="20"/>
+          <circle cx="100" cy="100" r="12"/>
+        </g>
+        <circle cx="100" cy="100" r="4" fill="#ffb23e"/>
+        <g font-family="Space Mono, monospace" font-size="4" fill="#14100b" text-anchor="middle">
+          <text x="100" y="8">1</text><text x="100" y="18">2</text><text x="100" y="28">3</text>
+          <text x="100" y="38">4</text><text x="100" y="48">5</text><text x="100" y="58">6</text>
+        </g>
+      </g>
+    </svg>
+
+    <div class="hero-copy" id="heroCopy">
+      <p class="status glass"><span class="dot"></span> Open to work &middot; Remote &middot; Onsite &middot; Relocation</p>
+      <h1><span class="h1a">Badal</span> <span class="h1b">Tomar</span></h1>
+      <p class="role"><b>Software Engineer</b> <i>·</i> React <i>·</i> Next.js <i>·</i> Node <i>·</i> TypeScript</p>
+      <p class="role2">AI Evaluation Engineer <i>+</i> Professional athlete</p>
+      <p class="lede">I build software the way I shoot: calm under pressure, precise, and on target. Based in Gurugram, India.</p>
+      <div class="cta">
+        <a class="btn btn-ink" href="#shots">See my work</a>
+        <a class="btn btn-ghost" href="assets/docs/Badal_Tomar_Resume.pdf" download>Résumé&nbsp;↓</a>
+      </div>
+    </div>
+
+    <div class="reticle" id="reticle" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="62" fill="none" stroke="#ffb23e" stroke-width=".6" opacity=".7"/><circle cx="100" cy="100" r="3" fill="none" stroke="#ffb23e" stroke-width=".6"/><path d="M100 14v62M100 124v62M14 100h62M124 100h62" stroke="#ffb23e" stroke-width=".6"/><path d="M100 30v6M100 164v6M30 100h6M164 100h6" stroke="#ffb23e" stroke-width="1.2"/></svg>
+    </div>
+    <div class="caps" aria-hidden="true">
+      <span class="cap" data-a=".2" data-b=".4">Breathe in.</span>
+      <span class="cap" data-a=".4" data-b=".6">Settle.</span>
+      <span class="cap" data-a=".6" data-b=".82">Hold.</span>
+      <span class="cap" data-a=".82" data-b=".97">Release.</span>
+    </div>
+    <div class="hero-hint" id="heroHint"><span>Scroll to take the shot</span><i></i></div>
+    <div class="veil" id="veil" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- stance -->
+<section id="stance" class="section dark" data-theme="dark" data-title="Stance">
+  <div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+  <svg class="doodle" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M38 10C28 10 28 18 28 28C28 36 24 40 16 40C24 40 28 44 28 52C28 62 28 70 38 70"/><path pathLength="1" d="M82 10C92 10 92 18 92 28C92 36 96 40 104 40C96 40 92 44 92 52C92 62 92 70 82 70"/><path pathLength="1" d="M52 54L68 54"/></svg>
+  <div class="wrap">
+    <p class="eyebrow reveal">// 01 stance</p>
+    <h2 class="disp" data-split>I build <em>reliable software</em>, and I evaluate the AI that writes it.</h2>
+
+    <div class="about">
+      <figure class="portrait tilt reveal">
+        <img src="assets/img/badal.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Portrait of Badal Tomar, software engineer">
+        <figcaption class="chip glass">Gurugram, India</figcaption>
+        <span class="chip chip2 glass">Open to work</span>
+      </figure>
+
+      <div class="prose reveal">
+        <p>I&rsquo;m Badal, a software engineer from Gurugram. I build full-stack products with <strong>React, Next.js, Node and MongoDB</strong>, from schema design and REST APIs to dashboards and responsive UI. I&rsquo;ve shipped 12 projects and a production CRM at Neog Camp, where I also mentored junior developers.</p>
+        <p>Right now I work on the AI side too, authoring and validating coding benchmarks and verification pipelines at Handshake AI. It makes me professionally paranoid about edge cases, and I read the whole problem before I ship anything.</p>
+        <p>Away from the keyboard I&rsquo;m a national-level shooter. I started in 2016, competed for eight years including <strong>8 Team India trials</strong>, and still shoot for fun. It taught me to stay calm when things get complicated, and I bring that to my code.</p>
+        <ul class="ids">
+          <li>Software Engineer</li><li>MCA, GPA 3.8</li><li>National-level shooter</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat glass reveal"><b data-count="12">12</b><span>Projects built, open source on GitHub</span></div>
+      <div class="stat glass reveal"><b id="statStack" data-count="33">33</b><span>Tools and technologies across my stack</span></div>
+      <div class="stat glass reveal"><b data-count="3.8" data-dec="1">3.8</b><span>MCA GPA out of 4</span></div>
+      <div class="stat glass reveal"><b data-count="10" data-suffix=" yrs">10 yrs</b><span>Shooting since 2016, 8× Team India trials</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- shots -->
+<section id="shots" class="section paper" data-theme="light" data-title="Shots">
+  <div class="orbs" aria-hidden="true"><i></i><i></i></div>
+  <svg class="doodle" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M40 18L16 40L40 62"/><path pathLength="1" d="M80 18L104 40L80 62"/><path pathLength="1" d="M66 14L54 66"/></svg>
+  <div class="wrap">
+    <p class="eyebrow reveal">// 02 shots</p>
+    <h2 class="disp" data-split>Selected <em>work</em>.</h2>
+    <p class="sub reveal">Open them, click around, break them. The three main projects are deployed and open source.</p>
+
+    <div class="stack">
+
+      <!-- Eterris -->
+      <article class="shot" style="--i:0">
+        <div class="shot-info">
+          <p class="shot-no">Project 01</p>
+          <h3>Eterris <small>CRM platform</small></h3>
+          <p class="blurb">A full-stack lead management platform that streamlines sales workflows and gives real-time pipeline analytics.</p>
+          <ul class="pts">
+            <li>Kanban pipeline from New to Closed, with agent workload tracking.</li>
+            <li>Chart.js dashboard for revenue, pipeline composition and lead sources.</li>
+            <li>Filtering, search and sorting run on the backend and live in the URL, so any view can be shared.</li>
+            <li>Activity timeline that auto-logs stage changes. MongoDB schemas model lead-to-agent relationships.</li>
+          </ul>
+          <p class="tags"><span>React</span><span>Vite</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Mongoose</span><span>Chart.js</span></p>
+          <p class="links">
+            <a class="btn btn-amber" href="https://eterris.vercel.app/" target="_blank" rel="noopener">Live demo ↗</a>
+            <a class="btn btn-line" href="https://github.com/badaltomar/eterris" target="_blank" rel="noopener">Frontend</a>
+            <a class="btn btn-line" href="https://github.com/badaltomar/crm-backend-api" target="_blank" rel="noopener">API</a>
+          </p>
+        </div>
+        <div class="shot-visual">
+          <div class="vtabs glass" role="tablist" aria-label="eterris views">
+            <span class="vt-pill" aria-hidden="true"></span>
+            <button role="tab" aria-selected="true" data-v="0" type="button">Preview</button>
+            <button role="tab" aria-selected="false" data-v="1" type="button">API</button>
+            <button role="tab" aria-selected="false" data-v="2" type="button">Architecture</button>
+          </div>
+          <div class="vpanes">
+            <div class="vpane on" role="tabpanel"><a class="shot-screen" href="https://eterris.vercel.app/" target="_blank" rel="noopener" aria-label="Open Eterris live demo">
+          <span class="bar"><i></i><i></i><i></i><em>eterris.vercel.app</em></span>
+          <!-- To use a real screenshot instead: <img src="assets/eterris.png" alt="Eterris dashboard"> -->
+          <span class="mock mock-crm" aria-hidden="true">
+            <span class="m-side"><i></i><i></i><i></i><i></i></span>
+            <span class="m-main">
+              <span class="m-stats"><b></b><b></b><b></b></span>
+              <span class="m-chart"><i style="--h:40%"></i><i style="--h:62%"></i><i style="--h:48%"></i><i style="--h:80%"></i><i style="--h:66%"></i><i style="--h:92%"></i><i style="--h:74%"></i></span>
+              <span class="m-board">
+                <span><em>New</em><u></u><u></u><u></u></span>
+                <span><em>Contacted</em><u></u><u></u></span>
+                <span><em>Qualified</em><u></u><u></u><u></u></span>
+                <span><em>Proposal</em><u></u></span>
+                <span><em>Closed</em><u class="won"></u><u class="won"></u></span>
+              </span>
+            </span>
+          </span>
+        </a></div>
+            <div class="vpane" role="tabpanel"><div class="shot-screen panel"><span class="bar"><i></i><i></i><i></i><em>api · eterris</em></span><pre class="panel-code"><code><span class="c">// REST API · Express + Mongoose</span>
+<span class="k">GET</span>    /leads?status&amp;salesAgent&amp;q&amp;sort
+<span class="k">GET</span>    /leads/:id       <span class="k">PATCH</span>  /leads/:id
+<span class="k">POST</span>   /leads           <span class="k">DELETE</span> /leads/:id
+<span class="k">GET</span>    /agents          <span class="k">POST</span>   /agents
+
+<span class="c">// GET /leads?status=Qualified&amp;sort=priority-desc</span>
+[{ leadName: <span class="n">"Acme Co"</span>, leadStatus: <span class="n">"Qualified"</span>,
+   priority: <span class="n">"High"</span>, dealValue: <span class="n">48000</span>,
+   agent: { agentName: <span class="n">"…"</span> } }]  <span class="c">// sample</span>
+
+<span class="c">// POST /leads → 400 if name + dealValue repeat</span>
+<span class="c">// enums + min() validated by Mongoose</span></code></pre></div></div>
+            <div class="vpane" role="tabpanel"><div class="shot-screen panel"><span class="bar"><i></i><i></i><i></i><em>architecture</em></span><div class="panel-arch"><svg class="arch" viewBox="0 0 480 300" role="img" aria-label="Architecture diagram"><defs><marker id="arrow-eterris" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" stroke="#ffb23e" stroke-width="1.6" stroke-linecap="round"/></marker></defs><text x="10" y="16" class="a-h">Eterris · request flow</text><rect x="10" y="34" width="460" height="64" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.55)"/><text x="28" y="61" class="a-t">React + Vite</text><text x="28" y="82" class="a-l">Kanban pipeline  ·  Chart.js dashboard  ·  Filters in the URL</text><path d="M60 101V127" stroke="#ffb23e" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#arrow-eterris)"/><text x="76" y="118" class="a-x">REST / JSON</text><rect x="10" y="130" width="460" height="64" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.55)"/><text x="28" y="157" class="a-t">Express API</text><text x="28" y="178" class="a-l">/leads · /agents  ·  Validation  ·  Filter · search · sort</text><path d="M60 197V223" stroke="#ffb23e" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#arrow-eterris)"/><text x="76" y="214" class="a-x">Mongoose</text><rect x="10" y="226" width="460" height="64" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.55)"/><text x="28" y="253" class="a-t">MongoDB</text><text x="28" y="274" class="a-l">leads + comments  ·  agents  ·  Timestamps</text></svg></div></div></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Clyora -->
+      <article class="shot" style="--i:1">
+        <div class="shot-info">
+          <p class="shot-no">Project 02</p>
+          <h3>Clyora <small>E-commerce app</small></h3>
+          <p class="blurb">A clean, scalable MERN storefront that shows real-world store functionality end to end.</p>
+          <ul class="pts">
+            <li>Product listing with categories, filters and search.</li>
+            <li>Cart and checkout flow, wishlist, address management, ratings and reviews, order summary.</li>
+            <li>Global state with Context API, reusable components, and a custom LocalStorage hook.</li>
+            <li>Next on the roadmap: user authentication and a payment gateway.</li>
+          </ul>
+          <p class="tags"><span>React</span><span>React Router</span><span>Context API</span><span>Node.js</span><span>Express</span><span>MongoDB</span></p>
+          <p class="links">
+            <a class="btn btn-amber" href="https://clyora-app.vercel.app/" target="_blank" rel="noopener">Live demo ↗</a>
+            <a class="btn btn-line" href="https://github.com/badaltomar/clyora-app" target="_blank" rel="noopener">Frontend</a>
+            <a class="btn btn-line" href="https://github.com/badaltomar/clyora-app-backend" target="_blank" rel="noopener">API</a>
+            <a class="btn btn-line" href="https://drive.google.com/file/d/1oM1BRFut8cYMsum1uqSQeowCkX_AYqb8/view?usp=drive_link" target="_blank" rel="noopener">Code walkthrough ▶</a>
+          </p>
+        </div>
+        <div class="shot-visual">
+          <div class="vtabs glass" role="tablist" aria-label="clyora views">
+            <span class="vt-pill" aria-hidden="true"></span>
+            <button role="tab" aria-selected="true" data-v="0" type="button">Preview</button>
+            <button role="tab" aria-selected="false" data-v="1" type="button">API</button>
+            <button role="tab" aria-selected="false" data-v="2" type="button">Architecture</button>
+          </div>
+          <div class="vpanes">
+            <div class="vpane on" role="tabpanel"><a class="shot-screen" href="https://clyora-app.vercel.app/" target="_blank" rel="noopener" aria-label="Open Clyora live demo">
+          <span class="bar"><i></i><i></i><i></i><em>clyora-app.vercel.app</em></span>
+          <span class="mock mock-shop" aria-hidden="true">
+            <span class="s-head"><b></b><u></u><s>2</s></span>
+            <span class="s-hero"></span>
+            <span class="s-grid">
+              <span><i></i><b></b><u></u></span><span><i></i><b></b><u></u></span><span><i></i><b></b><u></u></span>
+              <span><i></i><b></b><u></u></span><span><i></i><b></b><u></u></span><span><i></i><b></b><u></u></span>
+            </span>
+          </span>
+        </a></div>
+            <div class="vpane" role="tabpanel"><div class="shot-screen panel"><span class="bar"><i></i><i></i><i></i><em>api · clyora</em></span><pre class="panel-code"><code><span class="c">// REST API · Express + Mongoose</span>
+<span class="k">GET</span>    /cart            <span class="k">POST</span>   /cart
+<span class="k">POST</span>   /cart/:prodId    <span class="k">DELETE</span> /cart/:prodId
+<span class="k">DELETE</span> /cart            <span class="c">// clear the cart</span>
+<span class="k">GET</span>    /wishlist        <span class="k">POST</span>   /wishlist
+<span class="k">DELETE</span> /wishlist/:prodId
+<span class="k">GET</span>    /address         <span class="k">POST</span>   /address
+<span class="k">POST</span>   /address/:id     <span class="k">DELETE</span> /address/:id
+
+<span class="c">// POST /cart</span>
+{ id: <span class="n">12</span>, title: <span class="n">"…"</span>, price: <span class="n">499</span>, quantity: <span class="n">1</span> }
+<span class="c">// → 400 "Product already in cart" (unique id)</span></code></pre></div></div>
+            <div class="vpane" role="tabpanel"><div class="shot-screen panel"><span class="bar"><i></i><i></i><i></i><em>architecture</em></span><div class="panel-arch"><svg class="arch" viewBox="0 0 480 300" role="img" aria-label="Architecture diagram"><defs><marker id="arrow-clyora" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" stroke="#ffb23e" stroke-width="1.6" stroke-linecap="round"/></marker></defs><text x="10" y="16" class="a-h">Clyora · request flow</text><rect x="10" y="34" width="460" height="64" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.55)"/><text x="28" y="61" class="a-t">React + Router</text><text x="28" y="82" class="a-l">Context API state  ·  LocalStorage hook  ·  Cart · Wishlist</text><path d="M60 101V127" stroke="#ffb23e" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#arrow-clyora)"/><text x="76" y="118" class="a-x">fetch</text><rect x="10" y="130" width="460" height="64" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.55)"/><text x="28" y="157" class="a-t">Express API</text><text x="28" y="178" class="a-l">/cart · /wishlist  ·  /address  ·  Duplicate-safe cart</text><path d="M60 197V223" stroke="#ffb23e" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#arrow-clyora)"/><text x="76" y="214" class="a-x">Mongoose</text><rect x="10" y="226" width="460" height="64" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.55)"/><text x="28" y="253" class="a-t">MongoDB</text><text x="28" y="274" class="a-l">cart  ·  wishlist  ·  address</text></svg></div></div></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ShootPro -->
+      <article class="shot" style="--i:2">
+        <div class="shot-info">
+          <p class="shot-no">Project 03</p>
+          <h3>ShootPro <small>Training tracker</small></h3>
+          <p class="blurb">The tool I built for my own sport: a training tracker for 10&nbsp;m air pistol and rifle shooters that replaces the notebook.</p>
+          <ul class="pts">
+            <li>Score logging in ISSF formats (10, 40 and 60 shots) with series entry, auto totals, percentages and tens.</li>
+            <li>Score trend and weekly activity charts, plus streaks and milestone badges.</li>
+            <li>Hold and dry-fire focus timer with sets and rest intervals, and daily reflections with tags.</li>
+          </ul>
+          <p class="tags"><span>JavaScript</span><span>HTML / CSS</span><span>Chart.js</span><span>LocalStorage</span></p>
+          <p class="links">
+            <a class="btn btn-amber" href="https://shootpro.vercel.app" target="_blank" rel="noopener">Live demo ↗</a>
+            <a class="btn btn-line" href="https://github.com/badaltomar/shootpro" target="_blank" rel="noopener">Source</a>
+          </p>
+        </div>
+        <div class="shot-visual">
+          <div class="vtabs glass" role="tablist" aria-label="shootpro views">
+            <span class="vt-pill" aria-hidden="true"></span>
+            <button role="tab" aria-selected="true" data-v="0" type="button">Preview</button>
+            <button role="tab" aria-selected="false" data-v="1" type="button">Data</button>
+            <button role="tab" aria-selected="false" data-v="2" type="button">Architecture</button>
+          </div>
+          <div class="vpanes">
+            <div class="vpane on" role="tabpanel"><a class="shot-screen" href="https://shootpro.vercel.app" target="_blank" rel="noopener" aria-label="Open ShootPro live demo">
+          <span class="bar"><i></i><i></i><i></i><em>shootpro.vercel.app</em></span>
+          <span class="mock mock-sp" aria-hidden="true">
+            <span class="p-top"><b>ShootPro</b><u>12 day streak</u></span>
+            <span class="p-row">
+              <span class="p-rings"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="#f1e6cf" stroke-opacity=".35"/><circle cx="50" cy="50" r="33" fill="none" stroke="#f1e6cf" stroke-opacity=".35"/><circle cx="50" cy="50" r="22" fill="none" stroke="#f1e6cf" stroke-opacity=".5"/><circle cx="50" cy="50" r="11" fill="#f1e6cf" fill-opacity=".15" stroke="#ffb23e"/><circle cx="53" cy="48" r="2.4" fill="#ff6a2b"/><circle cx="47" cy="53" r="2.4" fill="#ff6a2b"/><circle cx="55" cy="55" r="2.4" fill="#ff6a2b"/><circle cx="45" cy="45" r="2.4" fill="#ff6a2b"/></svg></span>
+              <span class="p-line"><svg viewBox="0 0 160 70" preserveAspectRatio="none"><polyline fill="none" stroke="#ffb23e" stroke-width="2" points="0,55 20,48 40,50 60,36 80,40 100,26 120,30 140,16 160,10"/><polyline fill="#ffb23e" fill-opacity=".12" stroke="none" points="0,70 0,55 20,48 40,50 60,36 80,40 100,26 120,30 140,16 160,10 160,70"/></svg></span>
+            </span>
+            <span class="p-chips"><b>10 shots</b><b>40 shots</b><b class="on">60 shots</b></span>
+          </span>
+        </a></div>
+            <div class="vpane" role="tabpanel"><div class="shot-screen panel"><span class="bar"><i></i><i></i><i></i><em>data · shootpro</em></span><pre class="panel-code"><code><span class="c">// no backend: data lives in the browser</span>
+localStorage.sp_scores = [{
+  id: <span class="n">1760000000000</span>,  date: <span class="n">"2026-04-12"</span>,
+  eventType, sessionType,
+  format: <span class="n">"60"</span>,       <span class="c">// 10 · 40 · 60 shots</span>
+  total: <span class="n">541</span>,  tens: <span class="n">12</span>,
+  shots: [<span class="n">10</span>, <span class="n">9</span>, <span class="n">10</span>, …],
+  series: [<span class="n">92</span>, <span class="n">90</span>, …],
+  note: <span class="n">"…"</span>
+}]   <span class="c">// sample</span>
+
+<span class="c">// keys: sp_scores · sp_notes · sp_timer · sp_earned</span>
+<span class="c">// next: cloud sync + CSV / JSON export</span></code></pre></div></div>
+            <div class="vpane" role="tabpanel"><div class="shot-screen panel"><span class="bar"><i></i><i></i><i></i><em>architecture</em></span><div class="panel-arch"><svg class="arch" viewBox="0 0 480 300" role="img" aria-label="Architecture diagram"><defs><marker id="arrow-shootpro" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" stroke="#ffb23e" stroke-width="1.6" stroke-linecap="round"/></marker></defs><text x="10" y="16" class="a-h">ShootPro · data flow</text><rect x="10" y="34" width="460" height="64" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.55)"/><text x="28" y="61" class="a-t">Browser UI</text><text x="28" y="82" class="a-l">HTML · CSS · JS  ·  Score entry  ·  Focus timer</text><path d="M60 101V127" stroke="#ffb23e" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#arrow-shootpro)"/><text x="76" y="118" class="a-x">JSON</text><rect x="10" y="130" width="460" height="64" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.55)"/><text x="28" y="157" class="a-t">LocalStorage</text><text x="28" y="178" class="a-l">sp_scores  ·  sp_notes  ·  sp_timer</text><path d="M60 197V223" stroke="#ffb23e" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#arrow-shootpro)"/><text x="76" y="214" class="a-x">reads</text><rect x="10" y="226" width="460" height="64" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.55)"/><text x="28" y="253" class="a-t">Chart.js</text><text x="28" y="274" class="a-l">Score trend  ·  Weekly activity  ·  Streaks · badges</text></svg></div></div></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <h3 class="minis-title reveal">Also shipped</h3>
+    <div class="minis">
+      <article class="mini glass reveal">
+        <p class="mini-no">Meetup App</p>
+        <h4>Events, discovered.</h4>
+        <p>An interactive meetup events app with a React front end and a separate Node/Express REST API for event data, backed by MongoDB.</p>
+        <p class="tags"><span>React</span><span>Vite</span><span>Node.js</span><span>Express</span><span>MongoDB</span></p>
+        <p class="links">
+          <a class="btn btn-ink" href="https://meetup-app-one-iota.vercel.app" target="_blank" rel="noopener">Live ↗</a>
+          <a class="btn btn-ghost" href="https://github.com/badaltomar/meetup-app" target="_blank" rel="noopener">Frontend</a>
+          <a class="btn btn-ghost" href="https://github.com/badaltomar/meetup-app-backend" target="_blank" rel="noopener">API</a>
+        </p>
+      </article>
+      <article class="mini glass reveal">
+        <p class="mini-no">Website Highlight Saver</p>
+        <h4>Chrome extension with optional AI.</h4>
+        <p>A Manifest V3 extension: highlight text on any page, save it locally, and optionally summarise it with the OpenAI API using your own key. No backend, your data stays in the browser.</p>
+        <p class="tags"><span>JavaScript</span><span>Chrome Extension APIs</span><span>Manifest V3</span><span>OpenAI API</span></p>
+        <p class="links">
+          <a class="btn btn-ink" href="https://github.com/badaltomar/website-highlight-saver" target="_blank" rel="noopener">View source ↗</a>
+        </p>
+      </article>
+    </div>
+
+    <p class="more reveal">More on <a href="https://github.com/badaltomar?tab=repositories" target="_blank" rel="noopener">GitHub →</a></p>
+  </div>
+</section>
+
+<!-- the line -->
+<section id="line" class="section dark alt" data-theme="dark" data-title="The Line">
+  <div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+  <svg class="doodle" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M30 8L30 72"/><path pathLength="1" d="M30 28C30 40 62 34 62 48L62 56"/><path pathLength="1" d="M62 56C62 66 30 60 30 68"/><path pathLength="1" d="M25 10a5 5 0 1 0 10 0a5 5 0 1 0 -10 0"/><path pathLength="1" d="M57 58a5 5 0 1 0 10 0a5 5 0 1 0 -10 0"/><path pathLength="1" d="M25 72a5 5 0 1 0 10 0a5 5 0 1 0 -10 0"/><path pathLength="1" d="M86 20L106 20"/><path pathLength="1" d="M86 34L100 34"/><path pathLength="1" d="M86 48L110 48"/></svg>
+  <div class="wrap">
+    <p class="eyebrow reveal">// 03 the_line</p>
+    <h2 class="disp" data-split>Where I&rsquo;ve <em>stood</em> so far.</h2>
+
+    <ol class="timeline">
+      <li class="tl-item reveal now">
+        <div class="tl-when">Jan 2026 <i>→</i> Present</div>
+        <div class="tl-body glass">
+          <h3>AI Evaluation Engineer / Software Engineer</h3>
+          <p class="org">Handshake AI &middot; Remote</p>
+          <ul>
+            <li>Author and validate software engineering benchmarks and coding assessments across multiple programming languages, helping train and improve next-generation AI systems.</li>
+            <li>Build verification pipelines with Docker, Git, Bash and automated tests to drive code quality, edge-case coverage and evaluation reliability.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="tl-item reveal">
+        <div class="tl-when">Jan 2025 <i>→</i> Jan 2026</div>
+        <div class="tl-body glass">
+          <h3>Software Engineer</h3>
+          <p class="org">Neog Camp &middot; Bengaluru</p>
+          <ul>
+            <li>Built a production-ready CRM web application from scratch, with dashboards and data visualisations for customer relationships and workflows.</li>
+            <li>Refactored the app from client-side local storage to a backend-driven architecture, improving data consistency, security and multi-user support.</li>
+            <li>Improved the company website: faster performance, UI and responsiveness fixes, and reusable components.</li>
+            <li>Mentored junior developers through code reviews and debugging, raising code quality across the team.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="tl-item reveal">
+        <div class="tl-when">2023 <i>→</i> 2025</div>
+        <div class="tl-body glass">
+          <h3>Master of Computer Applications</h3>
+          <p class="org">Uttaranchal University &middot; Dehradun &middot; GPA 3.8 / 4</p>
+          <ul>
+            <li>Plus the NeoG Camp Full-Stack Web Development program (2025&ndash;2026), led by Tanay Pratap, ex-Senior Software Engineer at Microsoft.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="tl-item reveal">
+        <div class="tl-when">2016 <i>→</i> Present</div>
+        <div class="tl-body glass">
+          <h3>Shooting Sports</h3>
+          <p class="org">National level &middot; NRAI (2016&ndash;24) &middot; ISSF circuit (2017&ndash;24)</p>
+          <ul>
+            <li>Started in 2016 with 10&nbsp;m air pistol and rifle. Competed at national level for eight years with 8 Team India trials: daily practice, focus training and performing under pressure.</li>
+            <li>Still shooting today as a hobby. I even built a training tracker for it (see ShootPro above).</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+
+    <div class="certs reveal">
+      <h3>Certifications</h3>
+      <ul class="cert-grid">
+        <li class="cert glass"><span class="cert-status is-earned">Earned</span><b>Postman API Fundamentals Student Expert</b><small>Postman</small></li>
+        <li class="cert glass"><span class="cert-status is-earned">Completed</span><b>Technology Job Simulation</b><small>Deloitte Australia</small></li>
+        <li class="cert glass"><span class="cert-status is-earned">Earned</span><b>MongoDB Associate Developer</b><small>MongoDB University</small></li>
+        <li class="cert glass"><span class="cert-status is-earned">Earned</span><b>Meta Front-End / Back-End Developer</b><small>Professional Certificates · Coursera</small></li>
+        <li class="cert glass"><span class="cert-status is-progress">In progress</span><b>AWS Certified Cloud Practitioner</b><small>Amazon Web Services</small></li>
+        <li class="cert glass"><span class="cert-status is-progress">In progress</span><b>HackerRank Skills Certificates</b><small>JavaScript · React · Node.js · SQL</small></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- scorecard -->
+<section id="scorecard" class="section dark" data-theme="dark" data-title="Scorecard">
+  <div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <p class="eyebrow reveal">// 04 scorecard</p>
+    <h2 class="disp" data-split>My stack, <em>series</em> by series.</h2>
+
+    <div class="card glass" id="card">
+      <div class="series reveal">
+        <div class="s-label"><span>Series 1</span><h3>Languages</h3></div>
+        <ul class="chips"><li>JavaScript (ES6+)</li><li>TypeScript</li><li>Python</li><li>Java</li><li>SQL</li></ul>
+        <div class="s-total"><b data-sum>5</b><span>points</span></div>
+      </div>
+      <div class="series reveal">
+        <div class="s-label"><span>Series 2</span><h3>Frontend</h3></div>
+        <ul class="chips"><li>React.js</li><li>Next.js</li><li>Tailwind CSS</li><li>Redux Toolkit / Zustand</li><li>TanStack Query</li><li>HTML / CSS</li></ul>
+        <div class="s-total"><b data-sum>6</b><span>points</span></div>
+      </div>
+      <div class="series reveal">
+        <div class="s-label"><span>Series 3</span><h3>Backend &amp; Data</h3></div>
+        <ul class="chips"><li>Node.js</li><li>Express.js</li><li>REST APIs</li><li>GraphQL</li><li>JWT / OAuth</li><li>MongoDB</li><li>PostgreSQL</li><li>Redis</li></ul>
+        <div class="s-total"><b data-sum>8</b><span>points</span></div>
+      </div>
+      <div class="series reveal">
+        <div class="s-label"><span>Series 4</span><h3>Cloud &amp; DevOps</h3></div>
+        <ul class="chips"><li>AWS (EC2 / S3 / Lambda)</li><li>GitHub Actions / CI-CD</li><li>Docker</li><li>Linux</li><li>Git</li></ul>
+        <div class="s-total"><b data-sum>5</b><span>points</span></div>
+      </div>
+      <div class="series reveal">
+        <div class="s-label"><span>Series 5</span><h3>AI &amp; Quality</h3></div>
+        <ul class="chips"><li>LLM Evaluation</li><li>AI Quality Assurance</li><li>Model Benchmarking</li><li>Prompt Engineering</li><li>Code Review</li><li>Test Automation</li><li>Edge Case Analysis</li></ul>
+        <div class="s-total"><b data-sum>7</b><span>points</span></div>
+      </div>
+      <div class="series reveal">
+        <div class="s-label"><span>Series 6</span><h3>Fundamentals</h3></div>
+        <ul class="chips"><li>Data Structures &amp; Algorithms</li><li>System Design</li></ul>
+        <div class="s-total"><b data-sum>2</b><span>points</span></div>
+      </div>
+      <div class="series total reveal">
+        <div class="s-label"><span>Total</span><h3>Full card</h3></div>
+        <p class="sum-note">Ten years behind the rifle, a growing stack at the keyboard. Always sharpening both.</p>
+        <div class="s-total"><b id="grand">33</b><span>points</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- method -->
+<section id="method" class="section paper" data-theme="light" data-title="Method">
+  <div class="orbs" aria-hidden="true"><i></i><i></i></div>
+  <svg class="doodle" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M40 34C40 26 80 26 80 34L80 56C80 66 40 66 40 56Z"/><path pathLength="1" d="M50 28C50 20 70 20 70 28"/><path pathLength="1" d="M54 22L48 12"/><path pathLength="1" d="M66 22L72 12"/><path pathLength="1" d="M40 38L28 32"/><path pathLength="1" d="M40 46L26 46"/><path pathLength="1" d="M40 54L28 62"/><path pathLength="1" d="M80 38L92 32"/><path pathLength="1" d="M80 46L94 46"/><path pathLength="1" d="M80 54L92 62"/><path pathLength="1" d="M60 30L60 62"/></svg>
+  <div class="wrap">
+    <p class="eyebrow reveal">// 05 method</p>
+    <h2 class="disp" data-split>How I <em>work</em>.</h2>
+
+    <div class="principles">
+      <article class="principle glass reveal"><span>i.</span><h3>Slow is smooth, smooth is fast.</h3><p>I may take a little longer, because I&rsquo;m detail-oriented and like to ship things properly. Clean structure and covered edge cases save the whole team time next week.</p></article>
+      <article class="principle glass reveal"><span>ii.</span><h3>Break it, then fix it properly.</h3><p>I like tinkering, breaking things, and fixing them at the root instead of patching the symptom. That&rsquo;s where I do my best work.</p></article>
+      <article class="principle glass reveal"><span>iii.</span><h3>Own the outcome.</h3><p>I do my best work on fast-moving teams building real products, where speed, ownership and impact matter. I take responsibility, make the call, and ship what actually gets used.</p></article>
+    </div>
+
+    <!-- Case 01 -->
+    <div class="case reveal">
+      <div class="case-text">
+        <p class="tagline">Case file #01 &middot; Frontend</p>
+        <h3>The data was right. The UI was wrong.</h3>
+        <dl class="steps">
+          <div><dt>Symptom</dt><dd>State looked correct in DevTools, yet the screen kept showing old data after updates.</dd></div>
+          <div><dt>Root cause</dt><dd>Stale closures and improper memoization. A memoized callback was holding on to an old snapshot of state.</dd></div>
+          <div><dt>Fix</dt><dd>Derive values instead of copying them, use functional updates, correct the dependency arrays, and move state to where it&rsquo;s used.</dd></div>
+          <div><dt>Rule I keep</dt><dd>Memoize because the profiler says so, never out of habit.</dd></div>
+        </dl>
+      </div>
+      <pre class="code" aria-label="Illustrative example of a stale closure bug"><code><span class="c">// illustration: a stale closure</span>
+<span class="k">useEffect</span>(() =&gt; {
+  <span class="k">const</span> id = <span class="k">setInterval</span>(() =&gt;
+    <span class="k">setCount</span>(count + <span class="n">1</span>), <span class="n">1000</span>); <span class="c">// count frozen at 0</span>
+  <span class="k">return</span> () =&gt; <span class="k">clearInterval</span>(id);
+}, []);
+
+<span class="c">// the fix: don't close over stale state</span>
+<span class="k">setCount</span>(c =&gt; c + <span class="n">1</span>)</code></pre>
+    </div>
+
+    <!-- Case 02 -->
+    <div class="case rev reveal">
+      <div class="case-text">
+        <p class="tagline">Case file #02 &middot; Architecture</p>
+        <h3>When the browser is the database.</h3>
+        <dl class="steps">
+          <div><dt>Symptom</dt><dd>The CRM stored everything in each browser&rsquo;s localStorage. Data couldn&rsquo;t be shared between users, drifted out of sync, and nothing server-side protected it.</dd></div>
+          <div><dt>Root cause</dt><dd>The data had no owner. The client was acting as the source of truth for a multi-user product.</dd></div>
+          <div><dt>Fix</dt><dd>Moved ownership to an Express and MongoDB REST API with server-side validation, and refactored the UI to treat the server as the source of truth.</dd></div>
+          <div><dt>Rule I keep</dt><dd>Decide who owns the data first. The architecture follows from that.</dd></div>
+        </dl>
+      </div>
+      <pre class="code" aria-label="Before and after data access"><code><span class="c">// before: the browser is the database</span>
+<span class="k">const</span> leads = JSON.<span class="k">parse</span>(
+  localStorage.<span class="k">getItem</span>(<span class="n">'leads'</span>) || <span class="n">'[]'</span>
+);
+
+<span class="c">// after: the server owns the data</span>
+<span class="k">const</span> res = <span class="k">await</span> <span class="k">fetch</span>(
+  <span class="n">`${API}/leads?stage=qualified&amp;sort=-updatedAt`</span>
+);
+<span class="k">const</span> { data } = <span class="k">await</span> res.<span class="k">json</span>();</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- contact -->
+<section id="contact" class="section dark contact" data-theme="dark" data-title="Release">
+  <div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <p class="eyebrow reveal">// 06 release</p>
+    <h2 class="disp huge" data-split>Next shot? Let&rsquo;s build something <em>on target</em>.</h2>
+    <p class="avail reveal"><img class="avatar" src="assets/img/badal.webp" width="56" height="56" loading="lazy" decoding="async" alt=""><span class="avail-t"><span class="dot"></span><span> Open to software engineer roles &middot; Remote &middot; Onsite &middot; Relocation</span></span></p>
+    <div class="cta-row reveal">
+      <a class="btn btn-amber btn-lg" href="mailto:tomarbadal9@gmail.com?subject=Opportunity%20for%20Badal">tomarbadal9@gmail.com</a>
+      <button class="btn btn-line btn-lg" id="copyMail" type="button" data-email="tomarbadal9@gmail.com">Copy email</button>
+      <a class="btn btn-line btn-lg" href="assets/docs/Badal_Tomar_Resume.pdf" download>Download résumé ↓</a>
+    </div>
+    <ul class="socials reveal">
+      <li><a href="https://www.linkedin.com/in/badaltomar" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+      <li><a href="https://github.com/badaltomar" target="_blank" rel="noopener">GitHub ↗</a></li>
+    </ul>
+
+    <aside class="teaser glass reveal" aria-label="Currently building">
+      <div class="tz-radar" aria-hidden="true"><i class="sweep"></i><i class="blip b1"></i><i class="blip b2"></i><i class="blip b3"></i></div>
+      <div class="tz-body">
+        <p class="tz-tag"><span class="dot"></span> Classified &middot; In development</p>
+        <h3>Something new is <em>on the range</em>.</h3>
+        <p class="tz-p">A project for shooting sports, built by a shooter, for shooters. I&rsquo;m keeping the details under wraps for now.</p>
+        <p class="redact" tabindex="0" aria-label="Details are classified. Coming soon.">
+          <span class="r-bars" aria-hidden="true"><b style="--w:3.4em"></b><b style="--w:2.2em"></b><b style="--w:4.6em"></b><b style="--w:3em"></b></span>
+          <span class="r-open" aria-hidden="true">Declassified soon.</span>
+        </p>
+        <p class="tz-foot"><span class="cal" aria-hidden="true"></span><a href="mailto:tomarbadal9@gmail.com?subject=Your%20shooting%20sports%20project">Ask me about it →</a></p>
+      </div>
+    </aside>
+    <footer class="foot">
+      <span>© 2026 Badal Tomar &middot; Gurugram, India</span>
+      <span>Hand-built. Click anywhere, it&rsquo;s a shooting range.</span>
+    </footer>
+  </div>
+</section>
+
+</main>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
