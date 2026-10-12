@@ -361,11 +361,33 @@
     playShot();
   }
 
+  // A mouse fires on press. Touch fires only on a quick tap that has not moved,
+  // so starting a scroll never counts as a shot.
+  let tap = null;
+
   addEventListener('pointerdown', e => {
     if (e.button > 0 || !boot.classList.contains('done')) return;
     if (e.target.closest('a,button,.hud,.nav')) return;
-    fire(e.clientX, e.clientY);
+    if (e.pointerType === 'touch' || e.pointerType === 'pen') {
+      tap = { x: e.clientX, y: e.clientY, time: performance.now(), id: e.pointerId };
+    } else {
+      fire(e.clientX, e.clientY);
+    }
   });
+
+  addEventListener('pointermove', e => {
+    if (tap && e.pointerId === tap.id && Math.hypot(e.clientX - tap.x, e.clientY - tap.y) > 10) tap = null;
+  }, { passive: true });
+
+  addEventListener('pointerup', e => {
+    if (!tap || e.pointerId !== tap.id) return;
+    const { x, y, time } = tap;
+    tap = null;
+    if (performance.now() - time < 500) fire(x, y);
+  });
+
+  addEventListener('pointercancel', () => { tap = null; });
+  addEventListener('scroll', () => { tap = null; }, { passive: true });
 
   // one automatic bullseye when the first section arrives
   let bullseyeFired = false;
