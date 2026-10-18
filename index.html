@@ -18,7 +18,7 @@
 <script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="css/styles.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Badal Tomar","jobTitle":"Software Engineer","address":{"@type":"PostalAddress","addressLocality":"Gurugram","addressCountry":"IN"},"email":"mailto:tomarbadal9@gmail.com","image":"assets/img/badal.webp","sameAs":["https://github.com/badaltomar","https://www.linkedin.com/in/badaltomar"],"alumniOf":"Uttaranchal University","knowsAbout":["React","Next.js","Node.js","TypeScript","MongoDB","PostgreSQL","GraphQL","AWS","AI evaluation"]}
+{"@context":"https://schema.org","@type":"Person","name":"Badal Tomar","jobTitle":"Software Engineer","address":{"@type":"PostalAddress","addressLocality":"Gurugram","addressCountry":"IN"},"email":"mailto:tomarbadal9@gmail.com","image":"assets/img/badal.webp","sameAs":["https://github.com/badaltomar","https://www.linkedin.com/in/badaltomar"],"alumniOf":"Uttaranchal University","knowsAbout":["React","Next.js","Node.js","TypeScript","Fastify","MongoDB","PostgreSQL","Redis","GraphQL","AWS","AI evaluation"]}
 </script>
 </head>
 <body>
@@ -139,7 +139,7 @@
       </figure>
 
       <div class="prose reveal">
-        <p>I&rsquo;m Badal, a software engineer from Gurugram. I build full-stack products with <strong>React, Next.js, Node and MongoDB</strong>, from schema design and REST APIs to dashboards and responsive UI. I&rsquo;ve shipped 12 projects and a production CRM at Neog Camp, where I also mentored junior developers.</p>
+        <p>I&rsquo;m Badal, a software engineer from Gurugram. I build full-stack products with <strong>React, Next.js, Node and MongoDB</strong>, from schema design and REST APIs to dashboards and responsive UI. I&rsquo;ve shipped 13 projects and a production CRM at Neog Camp, where I also mentored junior developers.</p>
         <p>Right now I work on the AI side too, authoring and validating coding benchmarks and verification pipelines at Handshake AI. It makes me professionally paranoid about edge cases, and I read the whole problem before I ship anything.</p>
         <p>Away from the keyboard I&rsquo;m a national-level shooter. I started in 2016, competed for eight years including <strong>8 Team India trials</strong>, and still shoot for fun. It taught me to stay calm when things get complicated, and I bring that to my code.</p>
         <ul class="ids">
@@ -149,8 +149,8 @@
     </div>
 
     <div class="stats">
-      <div class="stat glass reveal"><b data-count="12">12</b><span>Projects built, open source on GitHub</span></div>
-      <div class="stat glass reveal"><b id="statStack" data-count="33">33</b><span>Tools and technologies across my stack</span></div>
+      <div class="stat glass reveal"><b data-count="13">13</b><span>Projects built, open source on GitHub</span></div>
+      <div class="stat glass reveal"><b id="statStack" data-count="39">39</b><span>Tools and technologies across my stack</span></div>
       <div class="stat glass reveal"><b data-count="3.8" data-dec="1">3.8</b><span>MCA GPA out of 4</span></div>
       <div class="stat glass reveal"><b data-count="10" data-suffix=" yrs">10 yrs</b><span>Shooting since 2016, 8× Team India trials</span></div>
     </div>
@@ -164,7 +164,7 @@
   <div class="wrap">
     <p class="eyebrow reveal">// 02 shots</p>
     <h2 class="disp" data-split>Selected <em>work</em>.</h2>
-    <p class="sub reveal">Open them, click around, break them. The three main projects are deployed and open source.</p>
+    <p class="sub reveal">Open them, click around, break them. The four main projects are deployed and open source.</p>
 
     <div class="stack">
 
@@ -231,10 +231,74 @@
         </div>
       </article>
 
-      <!-- Clyora -->
+      <!-- Event Booking API -->
       <article class="shot" style="--i:1">
         <div class="shot-info">
           <p class="shot-no">Project 02</p>
+          <h3>Event Booking API <small>Backend system</small></h3>
+          <p class="blurb">A backend for event booking with organizer and customer roles, built to stay correct under load.</p>
+          <ul class="pts">
+            <li>Never oversells: sharded ticket counters, one SQL statement per booking, and database constraints as a safety net.</li>
+            <li>Idempotency keys make retries safe. BullMQ workers send emails with retries and no duplicate jobs.</li>
+            <li>Load tested on one CPU: about 1,150 bookings per second, up from 430. A 20,000-booker event update fell from 14.7 s to 21 ms.</li>
+            <li>JWT auth, scrypt hashing, Zod validation, OpenAPI docs, and integration tests on real PostgreSQL and Redis.</li>
+          </ul>
+          <p class="tags"><span>Node.js</span><span>TypeScript</span><span>Fastify</span><span>PostgreSQL</span><span>Redis</span><span>BullMQ</span><span>Docker</span></p>
+          <p class="links">
+            <a class="btn btn-amber" href="https://event-booking-api-c0gv.onrender.com/docs" target="_blank" rel="noopener">Live API docs ↗</a>
+            <a class="btn btn-line" href="https://github.com/badaltomar/event-booking-api" target="_blank" rel="noopener">Source</a>
+            <a class="btn btn-line" href="https://github.com/badaltomar/event-booking-api/blob/main/docs/benchmarks/README.md" target="_blank" rel="noopener">Benchmarks</a>
+          </p>
+          <p class="hosting-note">Free hosting: the first request can take about a minute to wake up.</p>
+        </div>
+        <div class="shot-visual">
+          <div class="vtabs glass" role="tablist" aria-label="event booking api views">
+            <span class="vt-pill" aria-hidden="true"></span>
+            <button role="tab" aria-selected="true" data-v="0" type="button">Preview</button>
+            <button role="tab" aria-selected="false" data-v="1" type="button">API</button>
+            <button role="tab" aria-selected="false" data-v="2" type="button">Architecture</button>
+          </div>
+          <div class="vpanes">
+            <div class="vpane on" role="tabpanel"><a class="shot-screen" href="https://event-booking-api-c0gv.onrender.com/docs" target="_blank" rel="noopener" aria-label="Open the Event Booking API docs">
+          <span class="bar"><i></i><i></i><i></i><em>event-booking-api · /docs</em></span>
+          <span class="mock mock-api" aria-hidden="true">
+            <span class="a-top"><b>Event Booking API</b><u>OpenAPI</u></span>
+            <span class="a-group"><em>Auth</em>
+              <span class="a-row"><i>POST</i><b>/auth/register</b></span>
+              <span class="a-row"><i>POST</i><b>/auth/login</b></span>
+            </span>
+            <span class="a-group"><em>Events</em>
+              <span class="a-row get"><i>GET</i><b>/events</b></span>
+              <span class="a-row"><i>POST</i><b>/events</b></span>
+              <span class="a-row patch"><i>PATCH</i><b>/events/{id}</b></span>
+            </span>
+            <span class="a-group"><em>Bookings</em>
+              <span class="a-row"><i>POST</i><b>/events/{id}/bookings</b></span>
+              <span class="a-row get"><i>GET</i><b>/bookings</b></span>
+            </span>
+          </span>
+        </a></div>
+            <div class="vpane" role="tabpanel"><div class="shot-screen panel"><span class="bar"><i></i><i></i><i></i><em>api · event booking</em></span><pre class="panel-code"><code><span class="c">// REST API · Fastify + PostgreSQL</span>
+<span class="k">POST</span>   /auth/register     <span class="k">POST</span>  /auth/login
+<span class="k">GET</span>    /events            <span class="k">POST</span>  /events
+<span class="k">PATCH</span>  /events/:id        <span class="k">GET</span>   /events/:id/bookings
+<span class="k">POST</span>   /events/:id/bookings
+<span class="k">GET</span>    /bookings          <span class="k">GET</span>   /bookings/:id
+<span class="c">// roles: organizer manages events, customer books</span>
+
+<span class="c">// POST /events/:id/bookings</span>   { quantity: <span class="n">2</span> }
+<span class="c">// Idempotency-Key header makes retries safe</span>
+<span class="c">// 201 created · 200 same booking on retry</span>
+<span class="c">// 409 SOLD_OUT when tickets run out</span></code></pre></div></div>
+            <div class="vpane" role="tabpanel"><div class="shot-screen panel"><span class="bar"><i></i><i></i><i></i><em>architecture</em></span><div class="panel-arch"><svg class="arch" viewBox="0 0 480 300" role="img" aria-label="Architecture diagram"><defs><marker id="arrow-eventbooking" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" stroke="#ffb23e" stroke-width="1.6" stroke-linecap="round"/></marker></defs><text x="10" y="16" class="a-h">Event Booking API · request flow</text><rect x="10" y="28" width="460" height="54" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.55)"/><text x="26" y="54" class="a-t">Fastify API</text><text x="26" y="74" class="a-l">JWT and roles  ·  Zod validation  ·  OpenAPI docs</text><path d="M122 85V119" stroke="#ffb23e" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#arrow-eventbooking)"/><text x="132" y="106" class="a-x">SQL</text><path d="M357 85V119" stroke="#ffb23e" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#arrow-eventbooking)"/><text x="367" y="106" class="a-x">queue</text><rect x="10" y="122" width="225" height="74" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.55)"/><text x="26" y="148" class="a-t">PostgreSQL</text><text x="26" y="168" class="a-l">sharded ticket counters</text><text x="26" y="186" class="a-l">bookings · idempotency keys</text><rect x="245" y="122" width="225" height="74" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.55)"/><text x="261" y="148" class="a-t">Redis + BullMQ</text><text x="261" y="168" class="a-l">retries · no duplicate jobs</text><text x="261" y="186" class="a-l">fan-out for event updates</text><path d="M357 199V229" stroke="#ffb23e" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#arrow-eventbooking)"/><text x="367" y="218" class="a-x">jobs</text><rect x="245" y="232" width="225" height="58" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.55)"/><text x="261" y="258" class="a-t">Workers</text><text x="261" y="278" class="a-l">emails sent through Brevo</text><rect x="10" y="232" width="225" height="58" rx="14" fill="rgba(241,230,207,.06)" stroke="rgba(255,178,62,.35)" stroke-dasharray="5 5"/><text x="26" y="258" class="a-t">Load tested</text><text x="26" y="278" class="a-l">about 1,150 bookings/s, 1 CPU</text></svg></div></div></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Clyora -->
+      <article class="shot" style="--i:2">
+        <div class="shot-info">
+          <p class="shot-no">Project 03</p>
           <h3>Clyora <small>E-commerce app</small></h3>
           <p class="blurb">A clean, scalable MERN storefront that shows real-world store functionality end to end.</p>
           <ul class="pts">
@@ -288,9 +352,9 @@
       </article>
 
       <!-- ShootPro -->
-      <article class="shot" style="--i:2">
+      <article class="shot" style="--i:3">
         <div class="shot-info">
-          <p class="shot-no">Project 03</p>
+          <p class="shot-no">Project 04</p>
           <h3>ShootPro <small>Training tracker</small></h3>
           <p class="blurb">The tool I built for my own sport: a training tracker for 10&nbsp;m air pistol and rifle shooters that replaces the notebook.</p>
           <ul class="pts">
@@ -461,8 +525,8 @@ localStorage.sp_scores = [{
       </div>
       <div class="series reveal">
         <div class="s-label"><span>Series 3</span><h3>Backend &amp; Data</h3></div>
-        <ul class="chips"><li>Node.js</li><li>Express.js</li><li>REST APIs</li><li>GraphQL</li><li>JWT / OAuth</li><li>MongoDB</li><li>PostgreSQL</li><li>Redis</li></ul>
-        <div class="s-total"><b data-sum>8</b><span>points</span></div>
+        <ul class="chips"><li>Node.js</li><li>Express.js</li><li>Fastify</li><li>REST APIs</li><li>OpenAPI / Swagger</li><li>GraphQL</li><li>JWT / OAuth</li><li>MongoDB</li><li>PostgreSQL</li><li>Redis</li><li>BullMQ / Job Queues</li></ul>
+        <div class="s-total"><b data-sum>11</b><span>points</span></div>
       </div>
       <div class="series reveal">
         <div class="s-label"><span>Series 4</span><h3>Cloud &amp; DevOps</h3></div>
@@ -471,18 +535,18 @@ localStorage.sp_scores = [{
       </div>
       <div class="series reveal">
         <div class="s-label"><span>Series 5</span><h3>AI &amp; Quality</h3></div>
-        <ul class="chips"><li>LLM Evaluation</li><li>AI Quality Assurance</li><li>Model Benchmarking</li><li>Prompt Engineering</li><li>Code Review</li><li>Test Automation</li><li>Edge Case Analysis</li></ul>
-        <div class="s-total"><b data-sum>7</b><span>points</span></div>
+        <ul class="chips"><li>LLM Evaluation</li><li>AI Quality Assurance</li><li>Model Benchmarking</li><li>Prompt Engineering</li><li>Code Review</li><li>Test Automation</li><li>Integration Testing</li><li>Load Testing (k6)</li><li>Edge Case Analysis</li></ul>
+        <div class="s-total"><b data-sum>9</b><span>points</span></div>
       </div>
       <div class="series reveal">
         <div class="s-label"><span>Series 6</span><h3>Fundamentals</h3></div>
-        <ul class="chips"><li>Data Structures &amp; Algorithms</li><li>System Design</li></ul>
-        <div class="s-total"><b data-sum>2</b><span>points</span></div>
+        <ul class="chips"><li>Data Structures &amp; Algorithms</li><li>System Design</li><li>Database Design</li></ul>
+        <div class="s-total"><b data-sum>3</b><span>points</span></div>
       </div>
       <div class="series total reveal">
         <div class="s-label"><span>Total</span><h3>Full card</h3></div>
         <p class="sum-note">Ten years behind the rifle, a growing stack at the keyboard. Always sharpening both.</p>
-        <div class="s-total"><b id="grand">33</b><span>points</span></div>
+        <div class="s-total"><b id="grand">39</b><span>points</span></div>
       </div>
     </div>
   </div>
